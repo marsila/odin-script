@@ -18,6 +18,7 @@ const computerChoiceText = document.getElementById('computer-choice');
 const userResultText = document.getElementById('user-points');
 const computerResultText = document.getElementById('computer-points');
 const finalResultText = document.getElementById('final-result');
+const playAgain = document.getElementById('play-again');
 let userPoints = 0;
 let computerPoints = 0;
 
@@ -35,7 +36,8 @@ function getComputerChoice() {
 
 let x=0;
 
-btn.addEventListener('click', () => {  
+btn.addEventListener('click', () => {
+ 
 //while ( x < 5){
     const selectedRadio = document.querySelector('input[name="user-choice"]:checked');
     console.log(`bool: ${selectedRadio}`);
@@ -55,6 +57,11 @@ btn.addEventListener('click', () => {
     }
   //x++;  
  //}
+ x++;
+ if (x >= 5){
+    btn.disabled = true; 
+    playAgain.innerHTML = `<button onclick= window.location.reload()>Play Agin </button>`
+}
 }
 )
 
